@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: #273043;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane prefHeight="50.0" style="-fx-background-color: #273043;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <HBox alignment="CENTER_RIGHT" layoutX="106.0" layoutY="-25.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fx:id="minimizeBtn" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onMinimizeButton" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                            <image>
+                                <Image url="@images/icon-minimize.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="maximizeBtn" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onMaximizeButton" pickOnBounds="true" preserveRatio="true" translateX="-5.0">
+                            <image>
+                                <Image url="@images/icon-maximize.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fx:id="closeBtn" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#onExitButtonClicked" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/icon-close.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutY="500.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <GridPane prefHeight="119.0" prefWidth="1000.0" style="-fx-background-color: #273043;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="100.0" minHeight="100.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f1f1;">
+                            <children>
+                                <TabPane layoutX="-51.0" layoutY="-50.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <tabs>
+                                        <Tab fx:id="inputsTab" text="Entradas">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <JFXButton fx:id="selectFile" buttonType="RAISED" layoutX="680.0" layoutY="15.0" onMouseClicked="#searchFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textAlignment="CENTER" textFill="WHITE" />
+                                                        <Label fx:id="fileName" layoutX="199.0" layoutY="20.0" prefHeight="21.0" prefWidth="480.0" style="-fx-background-color: #e6e6e6;" text="File Name..." textFill="#9a9a9a" />
+                                                        <JFXButton fx:id="uploadFile" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#getContentFile" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: #11B5E4;" text="Cargar" textFill="WHITE" />
+                                                        <JFXButton fx:id="openFile" buttonType="RAISED" layoutX="109.0" layoutY="15.0" onMouseClicked="#openFile" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: #FFA400;" text="Abrir" textFill="WHITE" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="configLexerTab" text="Config. Lexer">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <JFXButton fx:id="onSearchLexerFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchLexerFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
+                                                        <Label fx:id="lexerFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: #e6e6e6;" text="Lexer File..." textFill="#9a9a9a" />
+                                                        <JFXButton fx:id="onGenerateLexer" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateLexer" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Lexer" textFill="WHITE" />
+                                                    </children></AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="configLexerCupTab" text="Config. Lexer Cup">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <JFXButton fx:id="onSearchLexerCupFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchLexerCupFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
+                                                        <Label fx:id="lexerCupFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: #e6e6e6;" text="Lexer Cup File..." textFill="#9a9a9a" />
+                                                        <JFXButton fx:id="onGenerateLexerCup" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateLexerCup" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Lexer Cup" textFill="WHITE" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab fx:id="configLexerCupTab1" text="Config. Syntax">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <JFXButton fx:id="onSearchSyntaxFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchSyntaxFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
+                                                        <Label fx:id="syntaxFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: e6e6e6;" text="Syntas File..." textFill="#9a9a9a" />
+                                                        <JFXButton fx:id="onGenerateSyntax" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateSyntax" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Syntax" textFill="WHITE" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children></AnchorPane>
+                        <AnchorPane GridPane.rowIndex="1">
+                            <children>
+                                <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <tabs>
+                                        <Tab text="Resultados">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TableView fx:id="tableContent" minHeight="-Infinity" minWidth="-Infinity" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="line" maxWidth="80.0" text="Línea" />
+                                                                <TableColumn fx:id="content" maxWidth="1.7976931348623157E308" minWidth="300.0" prefWidth="500.0" sortable="false" text="Contenido" />
+                                                                <TableColumn fx:id="resultLine" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="400.0" sortable="false" text="Resultado" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Resultados - Tree">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                    <children>
+                                                        <TreeTableView fx:id="treeTableContent" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <columns>
+                                                                <TreeTableColumn fx:id="treeLine" maxWidth="80.0" text="Línea" />
+                                                                <TreeTableColumn fx:id="treeContent" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="500.0" text="Contenido" />
+                                                                <TreeTableColumn fx:id="treeResult" maxWidth="1.7976931348623157E308" minWidth="100.0" prefWidth="400.0" text="Resultado" />
+                                                            </columns>
+                                                        </TreeTableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane GridPane.rowIndex="2">
+                            <children>
+                                <JFXButton fx:id="process" buttonType="RAISED" layoutX="1098.0" layoutY="8.0" onMouseClicked="#lexerResult" prefHeight="35.0" prefWidth="188.0" style="-fx-background-color: #1481BA;" text="Procesar" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="8.0" />
+                            </children></AnchorPane>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
