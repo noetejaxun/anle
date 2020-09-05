@@ -5,7 +5,7 @@ import static sample.Tokens.*;
 %type Tokens
 L=[a-zA-Z_]+
 D=[0-9]+
-espacio=[ ,\t,\r]+
+espacio=[ ,\r]+
 %{
     public String lexeme;
 %}
@@ -14,19 +14,29 @@ espacio=[ ,\t,\r]+
 /* Espacios en blanco */
 {espacio} {/*Ignore*/}
 /* Comentarios */
-( "//"(.)* ) {/*Ignore*/}
+( "'''"(.)* ) {/*Ignore*/}
+( "#"(.)* ) {/*Ignore*/}
 /* Salto de linea */
 ( "\n" ) {return Linea;}
+/* Tabulación */
+( "\t" ) {return Tabulacion;}
 /* Comillas */
-( "\"" ) {lexeme=yytext(); return Comillas;}
+( "\"" ) {lexeme=yytext(); return Comillas_Dobles;}
+( "'" ) {lexeme=yytext(); return Comillas_Simples;}
+
 /* Tipos de datos */
-( byte | int | char | long | float | double ) {lexeme=yytext(); return T_dato;}
+( byte | int | char | long | float | double ) {lexeme=yytext(); return T_Dato;}
 /* Tipo de dato String */
 ( String ) {lexeme=yytext(); return Cadena;}
+/* Palabra reservada */
+( "None" | "as" | "assert" | "async" | "await" | "break" | "class" | "continue" | "def" | "del" | "except" | "finally" | "from" | "global" | "import" | "in" | "is" | "lambda" | "nonlocal" | "pass" | "raise" | "return" | "try" | "with" | "yield" ) {lexeme=yytext(); return P_reservada;}
+
 /* Palabra reservada If */
 ( if ) {lexeme=yytext(); return If;}
 /* Palabra reservada Else */
 ( else ) {lexeme=yytext(); return Else;}
+/* Palabra reservada Elif */
+( elif ) {lexeme=yytext(); return Else_If;}
 /* Palabra reservada Do */
 ( do ) {lexeme=yytext(); return Do;}
 /* Palabra reservada While */
@@ -43,16 +53,21 @@ espacio=[ ,\t,\r]+
 ( "*" ) {lexeme=yytext(); return Multiplicacion;}
 /* Operador Division */
 ( "/" ) {lexeme=yytext(); return Division;}
+/* Operador Division Entera */
+( "//" ) {lexeme=yytext(); return Division_Entera;}
+/* Operador Módulo */
+( "%" ) {lexeme=yytext(); return Modulo;}
+/* Operador Exponente */
+( "**" ) {lexeme=yytext(); return Exponente;}
 /* Operadores logicos */
-( "&&" | "||" | "!" | "&" | "|" ) {lexeme=yytext(); return Op_logico;}
+( "and" | "or" | "not" ) {lexeme=yytext(); return Op_logico;}
 /*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {lexeme = yytext(); return Op_relacional;}
+( ">" | "<" | "==" | "!=" | ">=" | "<=" ) {lexeme = yytext(); return Op_relacional;}
 /* Operadores Atribucion */
-( "+=" | "-="  | "*=" | "/=" | "%=" ) {lexeme = yytext(); return Op_atribucion;}
-/* Operadores Incremento y decremento */
-( "++" | "--" ) {lexeme = yytext(); return Op_incremento;}
+( "+=" | "-="  | "*=" | "/=" | "**=" | "//=" | "%=" ) {lexeme = yytext(); return Op_asignacion;}
 /*Operadores Booleanos*/
-(true | false)      {lexeme = yytext(); return Op_booleano;}
+( true | false ) {lexeme = yytext(); return Op_booleano;}
+
 /* Parentesis de apertura */
 ( "(" ) {lexeme=yytext(); return Parentesis_a;}
 /* Parentesis de cierre */
@@ -65,10 +80,10 @@ espacio=[ ,\t,\r]+
 ( "[" ) {lexeme = yytext(); return Corchete_a;}
 /* Corchete de cierre */
 ( "]" ) {lexeme = yytext(); return Corchete_c;}
-/* Marcador de inicio de algoritmo */
-( "main" ) {lexeme=yytext(); return Main;}
-/* Punto y coma */
-( ";" ) {lexeme=yytext(); return P_coma;}
+/* Marcador de inicio de algoritmo
+( "main" ) {lexeme=yytext(); return Main;} */
+/* Punto y coma
+( ";" ) {lexeme=yytext(); return P_coma;} */
 /* Identificador */
 {L}({L}|{D})* {lexeme=yytext(); return Identificador;}
 /* Numero */

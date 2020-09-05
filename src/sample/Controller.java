@@ -63,9 +63,11 @@ public class Controller extends ExceptionAlerts {
                         }
                         result = "";
                         break;
-                    case Comillas:
+                    case Tabulacion:
+                    case P_reservada:
+                    case Comillas_Dobles:
+                    case Comillas_Simples:
                     case Cadena:
-                    case T_dato:
                     case If:
                     case Else:
                     case Do:
@@ -76,10 +78,10 @@ public class Controller extends ExceptionAlerts {
                     case Resta:
                     case Multiplicacion:
                     case Division:
+                    case Division_Entera:
+                    case T_Dato:
                     case Op_logico:
-                    case Op_incremento:
                     case Op_relacional:
-                    case Op_atribucion:
                     case Op_booleano:
                     case Parentesis_a:
                     case Parentesis_c:
@@ -87,10 +89,12 @@ public class Controller extends ExceptionAlerts {
                     case Llave_c:
                     case Corchete_a:
                     case Corchete_c:
-                    case Main:
-                    case P_coma:
                     case Identificador:
                     case Numero:
+                    case Modulo:
+                    case Else_If:
+                    case Exponente:
+                    case Op_asignacion:
                         result += "<" + tokens + "> " + lexer.lexeme + "\n";
                         break;
                     case ERROR:
@@ -159,7 +163,7 @@ public class Controller extends ExceptionAlerts {
     }
 
     public void lexicalAnalyzer(MouseEvent event) {
-        try {
+        /*try {
             File file = new File(fileName.getText());
             String ST = new String(Files.readAllBytes(file.toPath()));
 
@@ -179,7 +183,7 @@ public class Controller extends ExceptionAlerts {
             }
         } catch (Exception e) {
             setExceptionAlert(e);
-        }
+        }*/
     }
 
     public void setTableContent() {
