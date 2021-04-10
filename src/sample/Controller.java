@@ -85,6 +85,7 @@ public class Controller extends ExceptionAlerts {
                     case Derivada:
                     case Tiende_A:
                     case Numero_Decimal:
+                    case Corchete_Cierre:
                     case Limite:
                         result += "<" + tokens + "> " + lexer.lexeme + "\n";
                         break;

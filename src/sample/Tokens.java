@@ -12,6 +12,7 @@ public enum Tokens {
   Parentesis_Apertura,
   Parentesis_Cierre,
   Corchete_Apertura,
+  Corchete_Cierre,
   Suma,
   Resta,
   Multiplicacion,

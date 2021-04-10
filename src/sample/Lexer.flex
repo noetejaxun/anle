@@ -55,7 +55,7 @@ Trig        = ("sin"|"cos"|"tan"|"csc"|"sec"|"cot")
 
 ("["    )                                   { lexeme=yytext(); return Corchete_Apertura; }
 
-( "]"   )                                   { lexeme=yytext(); return Corchete_Apertura; }
+( "]"   )                                   { lexeme=yytext(); return Corchete_Cierre; }
 
 ( "+"   )                                   { lexeme=yytext(); return Suma; }
 
