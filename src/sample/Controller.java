@@ -1,6 +1,6 @@
 package sample;
 
-import java_cup.runtime.Symbol;
+//import java_cup.runtime.Symbol;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -49,6 +49,7 @@ public class Controller extends ExceptionAlerts {
             while (true){
                 Tokens tokens = lexer.yylex();
                 if ( tokens == null ) {
+
                     data.get(i).setResult(result);
                     setTableContent();
                     lexicalAnalyzer(event);
@@ -195,6 +196,7 @@ public class Controller extends ExceptionAlerts {
                 return true;
             }
         });
+
         line.setCellValueFactory( new PropertyValueFactory<Item, Integer>("line"));
         content.setCellValueFactory( new PropertyValueFactory<Item, String>("content"));
         resultLine.setCellValueFactory( new PropertyValueFactory<Item, String>("result") );
@@ -209,7 +211,7 @@ public class Controller extends ExceptionAlerts {
                         if(isEmpty()) {
                             setText("");
                         }  else {
-                            //setTextFill(Color.BLUE);
+                            setTextFill(Color.BLUE);
                             setFont(Font.font ("Consolas", 14));
                             setText(item.toString());
                         }
@@ -227,7 +229,7 @@ public class Controller extends ExceptionAlerts {
                         if(isEmpty())  {
                             setText("");
                         } else {
-                            //setTextFill(Color.BLACK);
+                            setTextFill(Color.BLACK);
                             setFont(Font.font ("Consolas", 14));
                             setText(item);
                         }

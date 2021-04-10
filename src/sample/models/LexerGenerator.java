@@ -19,7 +19,7 @@ public class LexerGenerator extends ExceptionAlerts {
   }
 
   public void generateCup(String[] rutas) throws Exception {
-    java_cup.Main.main(rutas);
+    //java_cup.Main.main(rutas);
     Path pathSym = Paths.get(System.getProperty("user.dir") +"/src/sample/sym.java");
     if ( Files.exists(pathSym) ) {
       Files.delete(pathSym);

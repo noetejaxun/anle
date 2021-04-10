@@ -34,7 +34,7 @@ public class Main extends Application {
     /*scene.setFill(Color.TRANSPARENT);
     primaryStage.initStyle(StageStyle.TRANSPARENT);*/
     primaryStage.setTitle("Pascal Scanner");
-    primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/logo.png")));
+    //primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/logo.png")));
     primaryStage.setScene(scene);
     primaryStage.show();
   }
