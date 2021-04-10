@@ -33,7 +33,7 @@ public class Main extends Application {
     Scene scene = new Scene(root);
     /*scene.setFill(Color.TRANSPARENT);
     primaryStage.initStyle(StageStyle.TRANSPARENT);*/
-    primaryStage.setTitle("Pascal Scanner");
+    primaryStage.setTitle("Analizador Derivadas - Compiladores");
     //primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("images/logo.png")));
     primaryStage.setScene(scene);
     primaryStage.show();

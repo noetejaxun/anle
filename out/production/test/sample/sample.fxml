@@ -55,7 +55,7 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
                                                         <JFXButton fx:id="selectFile" buttonType="RAISED" layoutX="680.0" layoutY="15.0" onMouseClicked="#searchFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textAlignment="CENTER" textFill="WHITE" />
-                                                        <Label fx:id="fileName" layoutX="199.0" layoutY="20.0" prefHeight="21.0" prefWidth="480.0" style="-fx-background-color: #e6e6e6;" text="File Name..." textFill="#9a9a9a" />
+                                                        <Label fx:id="fileName" layoutX="199.0" layoutY="20.0" prefHeight="21.0" prefWidth="480.0" style="-fx-background-color: #e6e6e6;" text="Archivo..." textFill="#9a9a9a" />
                                                         <JFXButton fx:id="uploadFile" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#getContentFile" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: #11B5E4;" text="Cargar" textFill="WHITE" />
                                                         <JFXButton fx:id="openFile" buttonType="RAISED" layoutX="109.0" layoutY="15.0" onMouseClicked="#openFile" prefHeight="31.0" prefWidth="75.0" style="-fx-background-color: #FFA400;" text="Abrir" textFill="WHITE" />
                                                     </children>
@@ -67,31 +67,9 @@
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                     <children>
                                                         <JFXButton fx:id="onSearchLexerFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchLexerFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
-                                                        <Label fx:id="lexerFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: #e6e6e6;" text="Lexer File..." textFill="#9a9a9a" />
+                                                        <Label fx:id="lexerFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: #e6e6e6;" text="Archivo Lexer..." textFill="#9a9a9a" />
                                                         <JFXButton fx:id="onGenerateLexer" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateLexer" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Lexer" textFill="WHITE" />
                                                     </children></AnchorPane>
-                                            </content>
-                                        </Tab>
-                                        <Tab fx:id="configLexerCupTab" text="Config. Lexer Cup">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                    <children>
-                                                        <JFXButton fx:id="onSearchLexerCupFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchLexerCupFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
-                                                        <Label fx:id="lexerCupFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: #e6e6e6;" text="Lexer Cup File..." textFill="#9a9a9a" />
-                                                        <JFXButton fx:id="onGenerateLexerCup" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateLexerCup" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Lexer Cup" textFill="WHITE" />
-                                                    </children>
-                                                </AnchorPane>
-                                            </content>
-                                        </Tab>
-                                        <Tab fx:id="configLexerCupTab1" text="Config. Syntax">
-                                            <content>
-                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                                    <children>
-                                                        <JFXButton fx:id="onSearchSyntaxFile" buttonType="RAISED" layoutX="710.0" layoutY="15.0" onMouseClicked="#searchSyntaxFile" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #1481BA;" text="..." textFill="WHITE" />
-                                                        <Label fx:id="syntaxFileName" layoutX="170.0" layoutY="20.0" prefHeight="21.0" prefWidth="536.0" style="-fx-background-color: e6e6e6;" text="Syntas File..." textFill="#9a9a9a" />
-                                                        <JFXButton fx:id="onGenerateSyntax" buttonType="RAISED" layoutX="20.0" layoutY="15.0" onMouseClicked="#generateSyntax" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #11B5E4;" text="Generar Syntax" textFill="WHITE" />
-                                                    </children>
-                                                </AnchorPane>
                                             </content>
                                         </Tab>
                                     </tabs>

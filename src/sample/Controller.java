@@ -64,38 +64,27 @@ public class Controller extends ExceptionAlerts {
                         }
                         result = "";
                         break;
-                    case Tabulacion:
-                    case P_reservada:
-                    case Comillas_Dobles:
-                    case Comillas_Simples:
-                    case Cadena:
-                    case If:
-                    case Else:
-                    case Do:
-                    case While:
-                    case For:
-                    case Igual:
+                    case Trig:
+                    case Numero:
+                    case N_Euler:
+                    case Variable:
+                    case Logaritmo:
+                    case Logaritmo_Natural:
+                    case Raiz:
+                    case F_Trigonometrica:
+                    case Parentesis_Apertura:
+                    case Parentesis_Cierre:
+                    case Corchete_Apertura:
                     case Suma:
                     case Resta:
                     case Multiplicacion:
-                    case Division:
-                    case Division_Entera:
-                    case T_Dato:
-                    case Op_logico:
-                    case Op_relacional:
-                    case Op_booleano:
-                    case Parentesis_a:
-                    case Parentesis_c:
-                    case Llave_a:
-                    case Llave_c:
-                    case Corchete_a:
-                    case Corchete_c:
-                    case Identificador:
-                    case Numero:
-                    case Modulo:
-                    case Else_If:
-                    case Exponente:
-                    case Op_asignacion:
+                    case División:
+                    case Exponenciacion:
+                    case Coma:
+                    case Asignacion:
+                    case Derivada:
+                    case Tiende_A:
+                    case Limite:
                         result += "<" + tokens + "> " + lexer.lexeme + "\n";
                         break;
                     case ERROR:
