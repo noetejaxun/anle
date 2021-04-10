@@ -16,7 +16,7 @@ public class FileChooserUpload extends ExceptionAlerts{
   final FileChooser fileChooser = new FileChooser();
 
   public String searchFile(MouseEvent event) {
-    fileChooser.setTitle("Pascal File...");
+    fileChooser.setTitle("Archivo...");
     fileChooser.setInitialDirectory(
         new File(System.getProperty("user.home"))
     );
