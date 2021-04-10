@@ -65,7 +65,7 @@ public class Controller extends ExceptionAlerts {
                         result = "";
                         break;
                     case Trig:
-                    case Numero:
+                    case Numero_Entero:
                     case N_Euler:
                     case Variable:
                     case Logaritmo:
@@ -84,6 +84,7 @@ public class Controller extends ExceptionAlerts {
                     case Asignacion:
                     case Derivada:
                     case Tiende_A:
+                    case Numero_Decimal:
                     case Limite:
                         result += "<" + tokens + "> " + lexer.lexeme + "\n";
                         break;

@@ -2,7 +2,7 @@ package sample;
 
 public enum Tokens {
   Trig,
-  Numero,
+  Numero_Entero,
   N_Euler,
   Variable,
   Linea,
@@ -23,5 +23,6 @@ public enum Tokens {
   F_Trigonometrica,
   Limite,
   Tiende_A,
+  Numero_Decimal,
   ERROR
 }

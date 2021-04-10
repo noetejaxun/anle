@@ -7,6 +7,8 @@ espacio=[ ,\r]+
 
 Whitespace  = [ ,\r]+
 Number      = [0-9]+
+Decimal     = [0-9]+[.][0-9]+
+Error       = [+-]?([0-9]*[.])?[0-9]+
 Variable    = [a-zA-Z]
 Variable_F  = [a-z]
 Trig        = ("sin"|"cos"|"tan"|"csc"|"sec"|"cot")
@@ -27,7 +29,9 @@ Trig        = ("sin"|"cos"|"tan"|"csc"|"sec"|"cot")
 
 ( {Trig} )                                  { lexeme=yytext(); return F_Trigonometrica; }
 
-("(-"{Number}+")")|{Number}+                { lexeme=yytext(); return Numero; }
+("(-"{Number}+")")|{Number}+                { lexeme=yytext(); return Numero_Entero; }
+
+("(-"{Decimal}+")")|{Decimal}+              { lexeme=yytext(); return Numero_Decimal; }
 
 ( "e" )                                     { lexeme=yytext(); return N_Euler; }
 
