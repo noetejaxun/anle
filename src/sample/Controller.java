@@ -107,8 +107,8 @@ public class Controller extends ExceptionAlerts {
 
     public void setPath(MouseEvent event) {
         lexerFileName.setText(System.getProperty("user.dir") + "/src/sample/Lexer.flex");
-        lexerCupFileName.setText(System.getProperty("user.dir") + "/src/sample/LexerCup.flex");
-        syntaxFileName.setText(System.getProperty("user.dir") + "/src/sample/Syntax.cup");
+        //lexerCupFileName.setText(System.getProperty("user.dir") + "/src/sample/LexerCup.flex");
+        //syntaxFileName.setText(System.getProperty("user.dir") + "/src/sample/Syntax.cup");
     }
 
     public void searchLexerFile(MouseEvent event) { lexerFileName.setText(lexerFileUpload.searchFile(event)); }

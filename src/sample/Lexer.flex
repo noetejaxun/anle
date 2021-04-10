@@ -33,7 +33,7 @@ Trig        = ("sin"|"cos"|"tan"|"csc"|"sec"|"cot")
 
 ({Variable})                                { lexeme=yytext(); return Variable; }
 
-( "Lim" )                                   { lexeme=yytext(); return Limite; }
+( "Lim" | "lim" | "LIM" )                   { lexeme=yytext(); return Limite; }
 
 ( "->" )                                    { lexeme=yytext(); return Tiende_A; }
 
@@ -43,7 +43,7 @@ Trig        = ("sin"|"cos"|"tan"|"csc"|"sec"|"cot")
 
 ( "sqrt"  )                                 { lexeme=yytext(); return Raiz; }
 
-( Whitespace )                              { /* ignore */ }
+{ Whitespace }                              { /* ignore */ }
 
 ( "("   )                                   { lexeme=yytext(); return Parentesis_Apertura; }
 
